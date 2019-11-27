@@ -1,4 +1,4 @@
-# hidden-markury
+# Hidden-Markury
 FRET Trace Analysis with Hidden-Markov-Model (Jupyter Notebook)
 
 ## Installation
@@ -47,7 +47,7 @@ TODO
 
 * **Christian Gebhardt** - *Initial work* - [ChristianGebhardt](https://github.com/ChristianGebhardt)
 
-See also the list of [contributors](https://github.com/ChristianGebhardt/hidden-markury/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/ChristianGebhardt/Hidden-Markury/contributors) who participated in this project.
 
 ## License
 
