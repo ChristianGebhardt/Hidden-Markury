@@ -1,5 +1,6 @@
 # Hidden-Markury
 FRET Trace Analysis with Hidden-Markov-Model (Jupyter Notebook)
+![Software preview](images/Preview.png?raw=true "Software Preview")
 
 ## Installation
 #### 1. Install a C compiler for hmmlearn (optional, if missing) 
