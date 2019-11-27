@@ -9,7 +9,7 @@ hmmlearn requires a C compiler. If you don't have a C compiler installed, the in
 On Windows: 
 - Go to https://visualstudio.microsoft.com/downloads/ -> Select "Tools for Visual Studio 2019" -> "Build Tools for Visual Studio 2019" -> Download
 - Install "Python Development" with "Python native development tools" selected
-
+![Python development tools](images/MicrosoftDevTools.png?raw=true "Python Development Tools")
 
 #### 2. Install hmmlearn
 - `pip install --upgrade --user hmmlearn`
@@ -31,8 +31,11 @@ The following packages are needed for full functionality:
 * Anaconda3 (64 bit)
 * Python 3.7 environment
 * Packages:
-  * TODO
-  * TODO
+  * hmmlearn 0.2.2
+  * numpy 1.17.3
+  * pandas 0.25.3
+  * matplotlib 3.1.1
+  * scipy 1.3.1
 
 ## Getting Started
 #### 1. Clone or download this repository
@@ -50,9 +53,7 @@ TODO
 See also the list of [contributors](https://github.com/ChristianGebhardt/Hidden-Markury/contributors) who participated in this project.
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
-
-* We thank Michael Isselstein for his feedback on the user experience of this software package
+This software was designed and created by Christian Gebhardt within ongoing work of the Cordes lab (http://www.mikrobiologie.biologie.uni-muenchen.de/forschung/ag_cordes/index.html). The project was financed by the German Science Foundation (SFB863, TP A13, to Thorben Cordes), an ERC Starting Grant (No. 638536 – SM-IMPORT to Thorben Cordes) and a PhD fellowship of the Studienstiftung (to Christian Gebhardt). 
