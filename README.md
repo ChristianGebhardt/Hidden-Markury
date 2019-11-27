@@ -1,5 +1,6 @@
-# Hidden-Markury
+# Hidden-Markury (Beta-Version)
 FRET Trace Analysis with Hidden-Markov-Model (Jupyter Notebook)
+
 ![Software preview](images/Preview.png?raw=true "Software Preview")
 
 ## Installation
@@ -11,6 +12,9 @@ On Windows:
 - Go to https://visualstudio.microsoft.com/downloads/ -> Select "Tools for Visual Studio 2019" -> "Build Tools for Visual Studio 2019" -> Download
 - Install "Python Development" with "Python native development tools" selected
 ![Python development tools](images/MicrosoftDevTools.png?raw=true "Python Development Tools")
+
+On Linux/Mac:
+- Not tested yet! Installation of hmmlearn (see next section) should raise informative error what to do.
 
 #### 2. Install hmmlearn
 - `pip install --upgrade --user hmmlearn`
@@ -40,15 +44,20 @@ The following packages are needed for full functionality:
 
 ## Getting Started
 #### 1. Clone or download this repository
-TODO
-#### 2. Open Jupyter Notebook
-TODO
-#### 3. Check installations
-TODO
-#### 4. Run example analysis
-TODO
-## Author(s)
+Download 
 
+#### 2. Open "Hidden-Markury Notebook" in jupyter notebook
+TODO
+
+#### 3. Check installations
+There is an extra import file, which checks and imports all the required packages at the beginning. If everything works fine, it should look the following:
+![Import preview](images/PreviewImport.png?raw=true "Import Preview")
+Otherwise, an error should inform you what to do.
+
+#### 4. Run example analysis
+![Prediction preview](images/PreviewPrediction.png?raw=true "Prediction Preview")
+
+## Author(s)
 * **Christian Gebhardt** - *Initial work* - [ChristianGebhardt](https://github.com/ChristianGebhardt)
 
 See also the list of [contributors](https://github.com/ChristianGebhardt/Hidden-Markury/contributors) who participated in this project.
