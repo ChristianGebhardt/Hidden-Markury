@@ -1,0 +1,4 @@
+%state	deg. state	t_start (s)	t_dwell (s)
+2	1	+0.000e+00	+3.755e-01
+1	1	+3.755e-01	+1.258e+01
+0	0	+1.296e+01	+Inf
