@@ -89,9 +89,19 @@ See also the list of [contributors](https://github.com/ChristianGebhardt/Hidden-
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
+## Release Notes
+###v1.0.0 - 2019-12-02
+### Features
+* Global trace analysis
+* 1D (E-Trace) or 2D (photon channels) analysis
+* Model optimization
+* Lifetime fitting
+* Sample variation (error estimation)
+
 ## Acknowledgments
 This software was designed and created by Christian Gebhardt within ongoing work of the Cordes lab (http://www.mikrobiologie.biologie.uni-muenchen.de/forschung/ag_cordes/index.html). The project was financed by the German Science Foundation (SFB863, TP A13, to Thorben Cordes), an ERC Starting Grant (No. 638536 – SM-IMPORT to Thorben Cordes) and a PhD fellowship of the Studienstiftung (to Christian Gebhardt). 
 
 ## Bibliography
 <a id="1">[1]</a> https://hmmlearn.readthedocs.io/en/latest/index.html
-<a id="1">[2]</a> https://sites.google.com/view/kinsoftchallenge/
+
+<a id="2">[2]</a> https://sites.google.com/view/kinsoftchallenge/
