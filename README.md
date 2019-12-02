@@ -8,8 +8,8 @@ FRET Trace Analysis with Hidden-Markov-Model (Jupyter Notebook)
 
 ## Installation
 #### 1. Install a C compiler for hmmlearn (optional, if missing) 
-
-hmmlearn requires a C compiler. If you don't have a C compiler installed, the installation of hmmlearn will raise an error.
+The basic implementation of the Hidden-Markov-Process and the model optimization is based on build-in functions of the python library `hmmlearn`[[1]](#1).
+`hmmlearn` requires a C compiler. If you don't have a C compiler installed, the installation of `hmmlearn` will raise an error.
 
 On Windows: 
 - Go to https://visualstudio.microsoft.com/downloads/ -> Select "Tools for Visual Studio 2019" -> "Build Tools for Visual Studio 2019" -> Download
@@ -73,7 +73,7 @@ There is an extra import file, which checks and imports all the required package
 Otherwise, an error should inform you what to do.
 
 #### 4. Run example analysis
-There are several example traces provided in the folder `examples` taken from the kinsoft challenge(KINSOFT). Those traces can directly be used to get familiar with the software.
+There are several example traces provided in the folder `examples` provided by the "kinSoftChallenge"[[2]](#2). Those traces can directly be used to get familiar with the software.
 
 
 
@@ -91,3 +91,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 This software was designed and created by Christian Gebhardt within ongoing work of the Cordes lab (http://www.mikrobiologie.biologie.uni-muenchen.de/forschung/ag_cordes/index.html). The project was financed by the German Science Foundation (SFB863, TP A13, to Thorben Cordes), an ERC Starting Grant (No. 638536 – SM-IMPORT to Thorben Cordes) and a PhD fellowship of the Studienstiftung (to Christian Gebhardt). 
+
+##Bibliography
+<a id="1">[1]</a> https://hmmlearn.readthedocs.io/en/latest/index.html
+<a id="1">[2]</a> https://sites.google.com/view/kinsoftchallenge/
