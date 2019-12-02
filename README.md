@@ -1,4 +1,4 @@
-![version](https://img.shields.io/badge/version-1.0.0-beta-blue)
+![version](https://img.shields.io/badge/version-1.0.0-blue)
 [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
 
 # Hidden-Markury (Beta-Version)
@@ -90,7 +90,8 @@ See also the list of [contributors](https://github.com/ChristianGebhardt/Hidden-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Release Notes
-### v1.0.0 - 2019-12-02
+### Version
+v1.0.0 - 2019-12-02
 ### Features
 * Global trace analysis
 * 1D (E-Trace) or 2D (photon channels) analysis
