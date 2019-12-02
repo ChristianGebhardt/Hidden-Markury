@@ -44,10 +44,19 @@ The following packages are needed for full functionality:
 
 ## Getting Started
 #### 1. Clone or download this repository
-Download 
+Clone repository via git
+
+`git clone https://github.com/ChristianGebhardt/Hidden-Markury`
+
+or clone/download repository manually
+![Download repository](images/Download.png?raw=true "Download Repository")
 
 #### 2. Open "Hidden-Markury Notebook" in jupyter notebook
-TODO
+* Activate python environment in python console with required packages installed (see section "Installation")
+* Navigate into repository folder `cd PATH_TO_HIDDEN-MARCURY`
+* Start jupyter with command `jupyter notebook`
+* Run notebook "Hidden-Marcury Notebook.ipynb"
+![Jupyter Preview](images/Jupyter.png?raw=true "Jupyter Preview")
 
 #### 3. Check installations
 There is an extra import file, which checks and imports all the required packages at the beginning. If everything works fine, it should look the following:
