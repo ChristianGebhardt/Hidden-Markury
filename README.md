@@ -91,7 +91,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Release Notes
 ### Version
-v1.0.0 - 2019-12-02
+v1.0.1 - 2020-02-25
 ### Features
 * Global trace analysis
 * 1D (E-Trace) or 2D (photon channels) analysis
@@ -100,7 +100,7 @@ v1.0.0 - 2019-12-02
 * Sample variation (error estimation)
 
 ## Acknowledgments
-This software was designed and created by Christian Gebhardt within ongoing work of the Cordes lab (http://www.mikrobiologie.biologie.uni-muenchen.de/forschung/ag_cordes/index.html). The project was financed by the German Science Foundation (SFB863, TP A13, to Thorben Cordes), an ERC Starting Grant (No. 638536 – SM-IMPORT to Thorben Cordes) and a PhD fellowship of the Studienstiftung (to Christian Gebhardt). 
+This software was designed and created by Christian Gebhardt within ongoing work of the Cordes lab (http://www.mikrobiologie.biologie.uni-muenchen.de/forschung/ag_cordes/index.html). The project was financed by the German Science Foundation (SFB863, TP A13, to Thorben Cordes), an ERC Starting Grant (No. 638536 – SM-IMPORT to Thorben Cordes) and a PhD fellowship of the Studienstiftung des deutsche Volkes (to Christian Gebhardt). 
 
 ## Bibliography
 <a id="1">[1]</a> https://hmmlearn.readthedocs.io/en/latest/index.html
