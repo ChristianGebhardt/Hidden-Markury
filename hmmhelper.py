@@ -54,6 +54,7 @@ def load_trace(data_path,DD_col=1,DA_col=2,E_col=-1,delimiter=None,orientation=N
             DA_values = np.array(df.iloc[DA_col].values[header_idx:])
         if E_col>0:
             E_values = np.array(df.iloc[E_col].values[header_idx:])
+            
     else:              #take first column for x-values and second column for y-values
         #print("-- vertical orientation --")
         T_values = np.array(df[df.columns[0]][header_idx:])
@@ -68,17 +69,18 @@ def load_trace(data_path,DD_col=1,DA_col=2,E_col=-1,delimiter=None,orientation=N
     DD_values = DD_values.astype('float64')
     DA_values = DA_values.astype('float64')
     E_values = E_values.astype('float64')
-    
+    if E_col<0 and DD_col>0 and DA_col>0:
+        E_values = np.divide(DA_values,DD_values+DA_values)
     return T_values, DD_values, DA_values, E_values, header
 
 # (plot selected traces
 def plot_traces(N_traces,start=0, traces_DD=[], traces_DA=[], traces_E=[],prediction=False):
     plt_rows = 0
     if len(traces_DD)>0 and len(traces_DA)>0:
-        DD_min = min([min(t[:,1]) for t in traces_DD])
-        DD_max = max([max(t[:,1]) for t in traces_DD])
-        DA_min = min([min(t[:,1]) for t in traces_DA])
-        DA_max = max([max(t[:,1]) for t in traces_DA])
+        DD_min = min([min(t[1]) for t in traces_DD[start:start+N_traces]])
+        DD_max = max([max(t[1]) for t in traces_DD[start:start+N_traces]])
+        DA_min = min([min(t[1]) for t in traces_DA[start:start+N_traces]])
+        DA_max = max([max(t[1]) for t in traces_DA[start:start+N_traces]])
         pr = [DD_min, DD_max, DA_min, DA_max]
         plt_rows += 2
     if len(traces_E)>0:
@@ -91,7 +93,7 @@ def plot_traces(N_traces,start=0, traces_DD=[], traces_DA=[], traces_E=[],predic
     elif N_traces>1 and plt_rows==1:
         axes = [axes]    
     fig.text(0.5, 0.01, 'Time, t [s]', ha='center')
-    fig.text(0.04, 0.5, 'Intensity, [a.u.]', va='center', rotation='vertical')
+    fig.text(0.04, 0.5, 'Intensity, [kcts]', va='center', rotation='vertical')
     for i in range(N_traces):
         if len(traces_DD)>0 and len(traces_DA)>0:
             axes[0][i % N_traces].plot(traces_DD[start+i][0], traces_DD[start+i][1],color='green')
@@ -125,9 +127,9 @@ def grouped_list(iterable, n):
 def print_gaussians(guess, mode='2D'):
     print("---------------------------------------\nGaussian parameter")
     if mode=='2D':
-        gaussians = grouped_list(guess, 5)
+        gaussians = grouped_list(guess, 6)
         for i, gauss in enumerate(gaussians):
-            print("Gaussian {0:d}: A{0:d}:{1:.0f}, mu_DD{0:d}:{2:.2f}, sigma_DD{0:d}:{3:.2f}, mu_DA{0:d}:{4:.2f}, sigma_DA{0:d}:{5:.2f}".format(i,*gauss))
+            print("Gaussian {0:d}: A{0:d}:{1:.0f}, mu_DD{0:d}:{2:.2f}, sigma_DD{0:d}:{3:.2f}, mu_DA{0:d}:{4:.2f}, sigma_DA{0:d}:{5:.2f}, rho{0:d}:{6:.2f}".format(i,*gauss))
     if mode=='1D':
         gaussians = grouped_list(guess, 3)
         for i, gauss in enumerate(gaussians):
@@ -138,13 +140,14 @@ def gauss_2D(xy, *params):
     #print(xy)
     (x, y) = xy
     z = np.zeros_like(x)
-    for i in range(0, len(params), 5):
+    for i in range(0, len(params), 6): #5 to 6
         amp = params[i]
         mu = params[i+1]
         sigma = params[i+2]
         mu2 = params[i+3]
         sigma2 = params[i+4]
-        z = z + amp * np.exp( -0.5*((x - mu)/sigma)**2)* np.exp( -0.5*((y - mu2)/sigma2)**2)
+        rho = params[i+5]
+        z = z + amp * np.exp( -0.5/(1-rho**2)*((x - mu)/sigma)**2)* np.exp( -0.5/(1-rho**2)*((y - mu2)/sigma2)**2)* np.exp(rho*(x - mu)*(y - mu2)/(sigma*sigma2*(1-rho**2)))
     return z
 
 def gauss_1D(x, *params):
@@ -166,7 +169,7 @@ def func_exp(x,A,lmd):
 def generate_hmm_initials(gauss_fits, degeneration, mode):
     states_N = sum(degeneration)
     if mode=='2D':
-        gauss_N = 5
+        gauss_N = 6
     else:
         gauss_N = 3
     gauss_select = []
@@ -174,12 +177,12 @@ def generate_hmm_initials(gauss_fits, degeneration, mode):
         for not_used in range(deg):
             gauss_select += list(gauss_fits[gauss_N*pos:gauss_N*(pos+1)])
     if mode=='2D':
-        #GAUSS_N = 5
-        means = [[mu,mu2] for A,mu,sigma,mu2,sigma2 in grouped_list(gauss_select, gauss_N)]
-        covs = [[[sigma**2,0],[0,sigma2**2]] for A,mu,sigma,mu2,sigma2 in grouped_list(gauss_select, gauss_N)]
-        starts = np.array([A*sigma*sigma2 for A,mu,sigma,mu2,sigma2 in grouped_list(gauss_select, gauss_N)])
+        #GAUSS_N = 6
+        means = [[mu,mu2] for A,mu,sigma,mu2,sigma2,rho in grouped_list(gauss_select, gauss_N)]
+        covs = [[[sigma**2,rho*sigma*sigma2],[rho*sigma*sigma2,sigma2**2]] for A,mu,sigma,mu2,sigma2,rho in grouped_list(gauss_select, gauss_N)]
+        starts = np.array([A*sigma*sigma2 for A,mu,sigma,mu2,sigma2,rho in grouped_list(gauss_select, gauss_N)])
     else:
-        #GAUSS_N = 5
+        #GAUSS_N = 3
         means = [[mu] for A,mu,sigma in grouped_list(gauss_select, gauss_N)]
         covs = [[[sigma**2]] for A,mu,sigma in grouped_list(gauss_select, gauss_N)]
         starts = np.array([A*sigma for A,mu,sigma in grouped_list(gauss_select, gauss_N)])
