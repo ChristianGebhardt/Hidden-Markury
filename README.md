@@ -100,7 +100,7 @@ v1.0.1 - 2020-02-25
 * Sample variation (error estimation)
 
 ## Acknowledgments
-This software was designed and created by Christian Gebhardt within ongoing work of the Cordes lab (http://www.mikrobiologie.biologie.uni-muenchen.de/forschung/ag_cordes/index.html). The project was financed by the German Science Foundation (SFB863, TP A13, to Thorben Cordes), an ERC Starting Grant (No. 638536 – SM-IMPORT to Thorben Cordes) and a PhD fellowship of the Studienstiftung des deutsche Volkes (to Christian Gebhardt). 
+This software was designed and created by Christian Gebhardt within ongoing work of the Cordes lab (http://www.mikrobiologie.biologie.uni-muenchen.de/forschung/ag_cordes/index.html). The project was financed by the German Science Foundation (SFB863, TP A13, to Thorben Cordes), an ERC Starting Grant (No. 638536 – SM-IMPORT to Thorben Cordes) and a PhD fellowship of the Studienstiftung des deutschen Volkes (to Christian Gebhardt). 
 
 ## Bibliography
 <a id="1">[1]</a> https://hmmlearn.readthedocs.io/en/latest/index.html
