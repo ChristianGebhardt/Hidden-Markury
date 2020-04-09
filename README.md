@@ -1,7 +1,7 @@
 ![version](https://img.shields.io/badge/version-1.0.1-blue)
 [![PyPI license](https://img.shields.io/pypi/l/ansicolortags.svg)](https://pypi.python.org/pypi/ansicolortags/)
 
-# Hidden-Markury (Beta-Version)
+# Hidden-Markury
 FRET Trace Analysis with Hidden-Markov-Model (Jupyter Notebook)
 
 ![Software preview](images/Preview.png?raw=true "Software Preview")
