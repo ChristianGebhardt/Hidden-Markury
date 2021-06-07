@@ -2,7 +2,7 @@
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">
   <info>
     <title>ChemPhysChem</title>
-    <id>https://github.com/ChristianGebhardt/Hidden-Markury/blob/master/ChemPhysChem.csl</id>
+    <id>https://raw.githubusercontent.com/ChristianGebhardt/Hidden-Markury/master/ChemPhysChem.csl</id>
     <author>
       <name>Christian Gebhardt</name>
       <email>christian.gebhardt@bio.lmu.de</email>
