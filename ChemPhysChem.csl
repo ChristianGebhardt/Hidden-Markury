@@ -2,7 +2,7 @@
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="sort-only" default-locale="en-GB">
   <info>
     <title>ChemPhysChem</title>
-    <id>https://raw.githubusercontent.com/ChristianGebhardt/Hidden-Markury/master/ChemPhysChem.csl</id>
+    <id>https://raw.githubusercontent.com/ChristianGebhardt/Hidden-Markury/master/ChemPhysChem</id>
     <author>
       <name>Christian Gebhardt</name>
       <email>christian.gebhardt@bio.lmu.de</email>
@@ -27,8 +27,8 @@
   </macro>
   <macro name="author">
     <names variable="author">
-      <name sort-separator=", " delimiter=", " and="symbol" initialize-with=". " delimiter-precedes-last="never" name-as-sort-order="all"/>
-      <label form="short" prefix=", "/>
+      <name delimiter=", " and="symbol" initialize-with=". " delimiter-precedes-last="never"/>
+      <label form="short" prefix=", " text-case="capitalize-first"/>
       <et-al font-style="italic"/>
     </names>
   </macro>
@@ -103,7 +103,7 @@
       <text variable="citation-number"/>
     </layout>
   </citation>
-  <bibliography et-al-min="32" et-al-use-first="32" second-field-align="flush" entry-spacing="0" line-spacing="2">
+  <bibliography et-al-min="99" et-al-use-first="99" second-field-align="flush" entry-spacing="0" line-spacing="2">
     <layout suffix=".">
       <text variable="citation-number" prefix="[" suffix="]"/>
       <group delimiter=" ">
